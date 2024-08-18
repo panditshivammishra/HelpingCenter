@@ -8,11 +8,12 @@ function CardSection({cards,setCards}) {
 
  const apiUrl = process.env.REACT_APP_API_URL;
   
-
   const fetchAllCards = async () => {
     try {
+      
       const {data} = await axios.get(`${apiUrl}/cards`);
       setCards(data);
+    
      } catch (error) {
       console.error('API call failed:', error);
       toast.error('Failed to fetch data. Please try again later.');
@@ -26,9 +27,11 @@ function CardSection({cards,setCards}) {
   return (
     <>
        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 py-4 w-3/4">  
-         {cards && cards.map((card) =>
-       <Card key={card._id} title={card.title} description={card.description} />
-              )}
+       
+         {cards&&cards.map((card) =>
+        <Card key={card._id} title={card.title} description={card.description} />
+        )}
+        
                <ToastContainer
         position="top-right"
         autoClose={5000}
