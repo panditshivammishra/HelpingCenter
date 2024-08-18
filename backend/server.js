@@ -9,6 +9,9 @@ app.use(express.json());
 app.use(cors()); 
 
 connectDB();
+app.get('/',(req, res) => {
+    res.end("hlo from server ✌️");
+});
 app.get('/ping', (req, res) => {
     res.end("Server is running");
 })
