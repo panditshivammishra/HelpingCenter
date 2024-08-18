@@ -29,17 +29,17 @@ export default function Searching({ setCards }) {
     };
   }, [searchTerm]);
 
-  // Update URL and fetch data based on debounceTerm
+ 
   useEffect(() => {
     const fetchCards = async () => {
       try {
         if (debounceTerm === '') {
-          // Fetch all cards when no search term is present
+         
           const { data } = await axios.get(`${apiUrl}/cards`);
           setCards(data);
           navigate('/');
         } else {
-          // Fetch filtered cards based on the search term
+         
           const { data } = await axios.get(`${apiUrl}/cards/search?q=${debounceTerm}`);
           setCards(data);
           navigate(`/?q=${debounceTerm}`);
@@ -54,7 +54,7 @@ export default function Searching({ setCards }) {
 
   return (
     <div className='text-center relative mx-auto p-9'>
-      <h1 className="text-5xl font-bold mb-9">How Can I Help You?</h1>
+      <h1 className="text-5xl font-bold mb-9">How Can We Help?</h1>
       <div className="relative w-1/2 mx-auto">
         <form onSubmit={(e) => e.preventDefault()}>
           <input
