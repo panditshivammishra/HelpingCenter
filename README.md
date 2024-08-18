@@ -11,7 +11,7 @@ Backend =[https://help-backend-grem.onrender.com/](URL)
 
 #### setup 
   Clone the repository 
-  using command=> 
+  using command and visit the directories required=> 
   ```bash
   git clone https://github.com/panditshivammishra/HelpingCenter.git
   cd frontend
